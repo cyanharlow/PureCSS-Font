@@ -1,0 +1,155 @@
+<html>
+
+<head>
+    <title>Pure CSS Font</title>
+    <style>
+        /*# sourceMappingURL=font.css.map */
+    </style>
+
+    <link rel="stylesheet" href="font.css" type="text/css">
+
+    <style>
+        body {
+            background-color: #fff;
+            font-size: 14px;
+            padding: 40px 15px;
+            min-height: 1000px;
+            font-family: 'Verdana', 'Arial', sans-serif;
+            background-image: radial-gradient(ellipse farthest-corner at center top, #b6d6be, #6ead7f);
+        }
+
+        .container {
+            margin: auto;
+            width: 800px;
+            max-width: 100%;
+        }
+
+        textarea {
+            width: 100%;
+            border: 0;
+            margin: 0 0 50px;
+        }
+
+        .resultpanel {
+            background: #fff;
+            border: 1px solid #8e8e8e;
+        }
+
+        .resultheader {
+            background-color: #cccccc;
+        }
+        .resultheader ul, .resultheader li {
+            list-style-type: none;
+            margin: 0;
+        }
+        .resultheader ul {
+            padding: 0;
+        }
+        .resultheader li {
+            display: inline-block;
+            padding: 20px;
+            vertical-align: top;
+            border-left: 3px solid rgba(2, 2, 2, 0.02);
+            border-right: 1px solid rgba(14, 14, 14, 0.44);
+            border-top: 3px solid #fff;
+            border-bottom: 3px solid rgba(0, 0, 0, 0.23);
+            width: 25%;
+            box-sizing: border-box;
+        }
+        .resultheader li label {
+            display: block;
+            padding: 0 0 8px;
+            font-variant: small-caps;
+            font-size: 90%;
+        }
+        .resultheader li input, .resultheader li select {
+            border: 0;
+            min-width: 100px;
+            min-height: 30px;
+        }
+        .resultpanel .display {
+            background: white;
+            padding: 30px;
+        }
+    </style>
+
+    <script type="text/javascript" src="preview.js"></script>
+
+</head>
+
+<body data-feedly-mini="yes" style="background-color: #444;">
+
+    <div class="container">
+
+        <div class="preview">
+            <span class="AZ a"></span>
+            <span class="AZ b"></span>
+            <span class="AZ c"></span>
+            <span class="AZ d"></span>
+            <span class="AZ e"></span>
+            <span class="AZ f"></span>
+            <span class="AZ g"></span>
+            <span class="AZ h"></span>
+            <span class="AZ i"></span>
+            <span class="AZ j"></span>
+            <span class="AZ k"></span>
+            <span class="AZ l"></span>
+            <span class="AZ m"></span>
+            <span class="AZ n"></span>
+            <span class="AZ o"></span>
+            <span class="AZ p"></span>
+            <span class="AZ q"></span>
+            <span class="AZ s"></span>
+            <span class="AZ t"></span>
+            <span class="AZ u"></span>
+            <span class="AZ v"></span>
+            <span class="AZ w"></span>
+            <span class="AZ y"></span>
+            <span class="AZ z"></span>
+        </div>
+
+        <textarea id="entry">Test out some text!</textarea>
+        <button id="submit">Convert!</button>
+
+        <div class="resultpanel">
+            <div class="resultheader">
+                <ul>
+                    <li>
+                        <label for="textcolor">Font Color</label>
+                        <input id="textcolor" type="color" value="#000000">
+                    </li><li>
+                        <label for="backgroundcolor">Background Color</label>
+                        <input id="backgroundcolor" type="color" value="#ffffff">
+                    </li><li>
+                        <label for="textsize">Font Size</label>
+                        <select id="textsize">
+                            <option value="8">8</option>
+                            <option value="10">10</option>
+                            <option value="12">12</option>
+                            <option value="14" selected>14</option>
+                            <option value="16">16</option>
+                            <option value="18">18</option>
+                            <option value="20">20</option>
+                            <option value="22">22</option>
+                            <option value="24">24</option>
+                        </select>
+                    </li><li>
+                        <label for="fontweight">Font Weight</label>
+                        <select id="fontweight">
+                            <option value="light">Light</option>
+                            <option value="normal" selected>Normal</option>
+                            <option value="bold">Bold</option>
+                        </select>
+                    </li>
+                </ul>
+            </div>
+            <div id="result" class="display">
+                <span class="AZ t"></span><span class="AZ e"></span><span class="AZ s"></span><span class="AZ t"></span><span class="AZ space"></span><span class="AZ o"></span><span class="AZ u"></span><span class="AZ t"></span><span class="AZ space"></span><span class="AZ s"></span><span class="AZ o"></span><span class="AZ m"></span><span class="AZ e"></span><span class="AZ space"></span><span class="AZ t"></span><span class="AZ e"></span><span class="AZ x"></span><span class="AZ t"></span><span class="AZ excl"></span>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
