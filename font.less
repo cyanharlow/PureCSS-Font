@@ -9,12 +9,22 @@
 @standardmargin: 0.08333em;
 @standardborder: 0.25em;
 @standardheight: 1em;
+@standardwidth: 0.8 * @standardheight;
+
+.AZLight {
+    .AZ, .AZ:before, .AZ:after {
+        border-width: 0.5 * @standardborder;
+    }
+}
 
 .AZ {
     font-style: normal;
     display: inline-block;
     position: relative;
-    vertical-align: top;
+    vertical-align: baseline;
+    border-width: @standardborder;
+    margin: 2*@standardmargin @standardmargin;
+    height: @standardheight;
     .vendor(box-sizing, border-box);
 
     &:after,
@@ -22,33 +32,26 @@
         content: "";
         display: block;
         position: absolute;
+        border-width: @standardborder;
         .vendor(box-sizing, border-box);
     }
 
     &.sp {
-        margin: @standardmargin;
         width: 0.5333 * @standardheight;
-        height: @standardheight;
     }
 
     &.a {
-        position: relative;
         overflow: hidden;
         width: @standardheight;
-        border-width: @standardborder;
         border-left-style: solid;
-        height: @standardheight;
         margin-right: -0.1 * @standardheight;
         margin-left: 0.2 * @standardheight;
-        margin-bottom: @standardmargin;
-        margin-top: @standardmargin;
         .vendor(transform, skewX(-18deg));
 
         &:before {
             top: 0;
             left: -120%;
             margin: auto;
-            border-width: @standardborder;
             border-right-style: solid;
             height: 186%;
             width: 100%;
@@ -59,7 +62,6 @@
         &:after {
             top: 57%;
             left: -19%;
-            border-width: @standardborder;
             border-top-style: solid;
             width: 65%;
             height: 0;
@@ -67,19 +69,15 @@
     }
 
     &.b {
-        position: relative;
         overflow: hidden;
-        border-width: @standardborder;
         border-left-style: solid;
-        margin: @standardmargin;
-        width: 0.8 * @standardheight;
-        height: @standardheight;
+        width: @standardwidth;
 
         &:before {
             right: 0;
-            border-width: @standardborder;
             border-style: solid;
-            width: 0.8 * @standardheight;
+            border-left: 0;
+            width: 100%;
             height: 0.6 * @standardheight;
             .vendor(border-radius, 0 50% 50% 0);
         }
@@ -87,48 +85,37 @@
         &:after {
             bottom: 0;
             right: 0;
-            border-width: @standardborder;
             border-style: solid;
-            width: 0.8 * @standardheight;
+            border-left: 0;
+            width: 100%;
             height: 0.6 * @standardheight;
             .vendor(border-radius, 0 50% 50% 0);
         }
     }
 
     &.c {
-        margin-top: @standardmargin;
-        margin-bottom: @standardmargin;
         margin-left: @standardmargin;
-        border-width: @standardborder;
         border-top-style: solid;
         border-bottom-style: solid;
         border-left-style: solid;
         border-right-color: transparent;
         border-right-style: solid;
         width: @standardheight;
-        height: @standardheight;
         .vendor(border-radius, 100%);
     }
 
     &.d {
-        margin: @standardmargin;
-        border-width: @standardborder;
         border-style: solid;
-        width: @standardheight;
-        height: @standardheight;
+        width: @standardwidth;
         .vendor(border-radius, 0 100% 100% 0);
     }
 
     &.e {
-        position: relative;
         overflow: hidden;
-        border-width: @standardborder;
         border-top-style: solid;
         border-left-style: solid;
         border-bottom-style: solid;
-        margin: @standardmargin;
-        width: 0.8 * @standardheight;
-        height: @standardheight;
+        width: @standardwidth;
 
         &:before {
             top: 0;
@@ -137,53 +124,41 @@
             right: 0;
             margin: auto;
             border-bottom-style: solid;
-            border-width: @standardborder;
-            width: 0.8 * @standardheight;
+            width: 100%;
             height: 0;
         }
     }
 
     &.f {
-        position: relative;
         overflow: hidden;
-        border-width: @standardborder;
         border-top-style: solid;
         border-left-style: solid;
-        width: 0.8 * @standardheight;
-        height: @standardheight;
-        margin: @standardmargin;
+        width: @standardwidth;
 
         &:before {
             top: 18%;
             left: 0;
             right: 0;
             margin: auto;
-            border-width: @standardborder;
             border-bottom-style: solid;
-            width: 0.8 * @standardheight;
+            width: @standardwidth;
             height: 0;
         }
     }
 
     &.g {
-        position: relative;
-        margin-top: @standardmargin;
-        margin-bottom: @standardmargin;
         margin-left: @standardmargin;
-        border-width: @standardborder;
         border-top-style: solid;
         border-bottom-style: solid;
         border-left-style: solid;
         border-right-color: transparent;
         border-right-style: solid;
         width: @standardheight;
-        height: @standardheight;
         .vendor(border-radius, 100%);
 
         &:before {
             top: 38%;
             right: -19%;
-            border-width: @standardborder;
             border-top-style: solid;
             width: 78%;
         }
@@ -191,21 +166,16 @@
         &:after {
             top: 38%;
             left: 88%;
-            border-width: @standardborder;
             border-right-style: solid;
             height: 80%;
         }
     }
 
     &.h {
-        position: relative;
         overflow: hidden;
-        margin: @standardmargin;
-        border-width: @standardborder;
         border-left-style: solid;
         border-right-style: solid;
-        width: 0.8 * @standardheight;
-        height: @standardheight;
+        width: @standardwidth;
 
         &:before {
             top: 0;
@@ -213,7 +183,6 @@
             left: 0;
             right: 0;
             margin: auto;
-            border-width: @standardborder;
             border-bottom-style: solid;
             width: 100%;
             height: 0;
@@ -221,22 +190,15 @@
     }
 
     &.i {
-        margin: @standardmargin;
-        border-width: @standardborder;
         border-right-style: solid;
-        height: @standardheight;
     }
 
     &.j {
-        position: relative;
-        margin: @standardmargin;
         overflow: hidden;
-        width: 0.8 * @standardheight;
-        height: @standardheight;
+        width: @standardwidth;
 
         &:after {
             right: 0;
-            border-width: @standardborder;
             border-right-style: solid;
             width: 0.5 * @standardheight;
             height: 0.76667 * @standardheight;
@@ -245,7 +207,6 @@
         &:before {
             bottom: 0;
             right: -0.3 * @standardheight;
-            border-width: @standardborder;
             border-top-color: transparent;
             border-top-style: solid;
             border-bottom-style: solid;
@@ -260,20 +221,14 @@
     }
 
     &.k {
-        position: relative;
         margin-left: @standardmargin;
-        margin-top: @standardmargin;
-        margin-bottom: @standardmargin;
-        border-width: @standardborder;
         border-left-style: solid;
         overflow: hidden;
         width: @standardheight;
-        height: @standardheight;
 
         &:before {
             right: 0;
             bottom: 23%;
-            border-width: 0.28333 * @standardheight;
             border-right-style: solid;
             width: 0;
             height: 100%;
@@ -284,7 +239,6 @@
         &:after {
             top: 35%;
             right: 0;
-            border-width: 0.28333 * @standardheight;
             border-right-style: solid;
             width: 0;
             height: 100%;
@@ -294,29 +248,20 @@
     }
 
     &.l {
-        position: relative;
-        margin: @standardmargin;
-        width: 0.8 * @standardheight;
-        height: @standardheight;
-        border-width: @standardborder;
+        width: @standardwidth;
         border-bottom-style: solid;
         border-left-style: solid;
     }
 
     &.m {
-        position: relative;
-        margin: @standardmargin;
-        border-width: @standardborder;
         border-left-style: solid;
         border-right-style: solid;
         overflow: hidden;
         width: @standardheight;
-        height: @standardheight;
 
         &:before {
             right: 92%;
             bottom: 0;
-            border-width: @standardborder;
             border-bottom-color: transparent;
             border-bottom-style: solid;
             border-left-style: solid;
@@ -328,7 +273,6 @@
         &:after {
             bottom: 0;
             left: 100%;
-            border-width: @standardborder;
             border-bottom-color: transparent;
             border-bottom-style: solid;
             border-right-style: solid;
@@ -339,14 +283,10 @@
     }
 
     &.n {
-        position: relative;
-        margin: @standardmargin;
-        border-width: @standardborder;
         border-left-style: solid;
         border-right-style: solid;
         overflow: hidden;
-        width: 0.8 * @standardheight;
-        height: @standardheight;
+        width: @standardwidth;
 
         &:before {
             left: 0;
@@ -354,7 +294,6 @@
             top: 0;
             bottom: 0;
             margin: auto;
-            border-width: @standardborder;
             border-bottom-color: transparent;
             border-bottom-style: solid;
             border-left-style: solid;
@@ -364,27 +303,19 @@
         }
     }
 
-    &.o {
-        margin: @standardmargin;
-        border-width: @standardborder;
+    &.o, &.d0 {
         border-style: solid;
         width: @standardheight;
-        height: @standardheight;
         .vendor(border-radius, 100%);
     }
 
     &.p {
-        position: relative;
-        margin: @standardmargin;
-        border-width: @standardborder;
         border-left-style: solid;
         overflow: hidden;
-        width: 0.8 * @standardheight;
-        height: @standardheight;
+        width: @standardwidth;
 
         &:before {
             right: 0;
-            border-width: @standardborder;
             border-style: solid;
             border-left-color: transparent;
             width: 180%;
@@ -394,18 +325,13 @@
     }
 
     &.q {
-        position: relative;
-        margin: @standardmargin;
-        border-width: @standardborder;
         border-style: solid;
         width: @standardheight;
-        height: @standardheight;
         .vendor(border-radius, 100%);
 
         &:before {
             bottom: -0.08333 * @standardheight;
             right: -@standardborder;
-            border-width: @standardborder;
             border-top-style: solid;
             width: 110%;
             .vendor(transform, rotate(45deg));
@@ -413,19 +339,13 @@
     }
 
     &.r {
-        position: relative;
-        margin-top: @standardmargin;
-        margin-bottom: @standardmargin;
         margin-left: @standardmargin;
-        border-width: @standardborder;
         border-left-style: solid;
         overflow: hidden;
         width: @standardheight;
-        height: @standardheight;
 
         &:before {
             right: 20%;
-            border-width: @standardborder;
             border-style: solid;
             border-left-color: transparent;
             width: 114%;
@@ -436,7 +356,6 @@
         &:after {
             top: 60%;
             left: 0;
-            border-width: @standardborder;
             border-right-style: solid;
             width: 0;
             height: @standardheight;
@@ -446,14 +365,10 @@
     }
 
     &.s {
-        position: relative;
-        margin: @standardmargin;
-        border-width: @standardborder;
         border-top-style: solid;
         border-bottom-style: solid;
         overflow: hidden;
-        width: 0.8 * @standardheight;
-        height: @standardheight;
+        width: @standardwidth;
         .vendor(border-radius, 25%);
 
         &:before {
@@ -462,7 +377,6 @@
             left: 0;
             right: 0;
             margin: auto;
-            border-width: @standardborder;
             border-bottom-style: solid;
             border-left-style: solid;
             width: 0;
@@ -472,13 +386,9 @@
     }
 
     &.t {
-        position: relative;
-        margin: @standardmargin;
-        border-width: @standardborder;
         border-top-style: solid;
-        width: 0.8 * @standardheight;
+        width: @standardwidth;
         overflow: hidden;
-        height: @standardheight;
 
         &:before {
             top: 0;
@@ -486,68 +396,56 @@
             left: 0;
             right: 0;
             margin: auto;
-            border-width: @standardborder;
             border-left-style: solid;
             width: 0;
-            height: @standardheight;
         }
     }
 
     &.u {
-        margin: @standardmargin;
-        border-width: @standardborder;
         border-bottom-style: solid;
         border-left-style: solid;
         border-right-style: solid;
-        width: 0.8 * @standardheight;
-        height: @standardheight;
+        width: @standardwidth;
         .vendor(border-radius, 0 0 40% 40%);
     }
 
     &.v {
-        position: relative;
         overflow: hidden;
         width: @standardheight;
-        height: @standardheight;
-        margin: @standardmargin;
 
         &:before {
             bottom: 0;
-            right: 60%;
-            border-width: @standardborder;
+            right: 50%;
             border-bottom-color: transparent;
             border-bottom-style: solid;
             border-left-style: solid;
-            height: 150%;
+            height: 100%;
             .vendor(transform, rotate(-27deg));
+            .vendor(transform-origin, 100% 100%);
         }
 
         &:after {
             bottom: 0;
-            left: 60%;
-            border-width: @standardborder;
+            left: 50%;
             border-bottom-color: transparent;
             border-bottom-style: solid;
             border-right-style: solid;
-            height: 150%;
+            height: 100%;
             .vendor(transform, rotate(27deg));
+            .vendor(transform-origin, 100% 100%);
+
         }
     }
 
     &.w {
-        position: relative;
-        margin: @standardmargin;
-        border-width: @standardborder;
         border-left-style: solid;
         border-right-style: solid;
         overflow: hidden;
         width: @standardheight;
-        height: @standardheight;
 
         &:before {
             top: 30%;
             right: 55%;
-            border-width: @standardborder;
             border-top-color: transparent;
             border-top-style: solid;
             border-left-style: solid;
@@ -558,7 +456,6 @@
         &:after {
             top: 30%;
             left: 55%;
-            border-width: @standardborder;
             border-top-color: transparent;
             border-top-style: solid;
             border-right-style: solid;
@@ -568,11 +465,8 @@
     }
 
     &.x {
-        position: relative;
         overflow: hidden;
         width: @standardheight;
-        height: @standardheight;
-        margin: @standardmargin;
 
         &:before {
             top: 0;
@@ -580,7 +474,6 @@
             left: 0;
             right: 0;
             margin: auto;
-            border-width: @standardborder;
             border-left-style: solid;
             overflow: hidden;
             width: 0;
@@ -594,7 +487,6 @@
             left: 0;
             right: 0;
             margin: auto;
-            border-width: @standardborder;
             border-right-style: solid;
             height: 150%;
             width: 0;
@@ -603,18 +495,14 @@
     }
 
     &.y {
-        position: relative;
-        margin: @standardmargin;
         overflow: hidden;
         width: @standardheight;
-        height: @standardheight;
 
         &:before {
             bottom: 69%;
             left: 0;
             right: 0;
             margin: auto;
-            border-width: @standardborder;
             border-bottom-style: solid;
             border-right-style: solid;
             width: 100%;
@@ -627,7 +515,6 @@
             left: 0;
             right: 0;
             margin: auto;
-            border-width: @standardborder;
             border-right-style: solid;
             width: 0;
             height: 0.7 * @standardheight;
@@ -635,14 +522,10 @@
     }
 
     &.z {
-        position: relative;
-        margin: @standardmargin;
-        border-width: @standardborder;
         border-top-style: solid;
         border-bottom-style: solid;
         overflow: hidden;
         width: 0.75 * @standardheight;
-        height: @standardheight;
 
         &:before {
             top: 0;
@@ -650,7 +533,6 @@
             left: 0;
             right: 0;
             margin: auto;
-            border-width: @standardborder;
             border-right-style: solid;
             height: 250%;
             width: 0;
@@ -659,22 +541,243 @@
     }
 
     &.ex {
-        position: relative;
-        margin: @standardmargin;
-        height: @standardheight;
 
         &:before {
             top: 0;
-            border-width: @standardborder;
             border-right-style: solid;
             height: 0.6 * @standardheight;
         }
 
         &:after {
             bottom: 0;
-            border-width: @standardborder;
             border-right-style: solid;
             height: 0.2 * @standardheight;
+        }
+    }
+    &._p {
+        &:after {
+            bottom: 0;
+            border-right-style: solid;
+            height: 0.2 * @standardheight;
+        }
+    }
+
+    &._c {
+        &:before {
+            bottom: -0.2 * @standardheight;
+            border-right-style: solid;
+            border-radius: ~'0 100% 100% 0 / 0 40% 60% 0';
+            height: 0.4 * @standardheight;
+            width: 0.2 * @standardheight;
+        }
+
+    }
+
+    &._q {
+        overflow: hidden;
+        width: @standardwidth;
+
+        &:before {
+            right: 0;
+            border-style: solid;
+            border-left: 0;
+            width: 0.6 * @standardheight;
+            height: 0.6 * @standardheight;
+            .vendor(border-radius, 0 50% 50% 0);
+            .vendor(transform, rotateZ(-35deg));
+        }
+
+        &:after {
+            bottom: 0;
+            width: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+            border-right-style: solid;
+            height: 0.2 * @standardheight;
+        }
+    }
+
+    &.d1 {
+        border-right-style: solid;
+        width: 0.6 * @standardheight;
+        overflow: hidden;
+
+        &:before {
+            right: 0;
+            margin: auto;
+            border-top-style: solid;
+            width: 100%;
+            .vendor(transform-origin, 100% 0);
+            .vendor(transform, rotateZ(-30deg));
+        }
+    }
+
+    &.d2 {
+        border-top-style: solid;
+        border-bottom-style: solid;
+        overflow: hidden;
+        width: @standardwidth;
+        .vendor(border-radius, 25% 35% 0 0);
+
+        &:before {
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+            border-bottom-style: solid;
+            border-left-style: solid;
+            width: 0;
+            height: 1.5 * @standardheight;
+            .vendor(transform, rotate(45deg));
+        }
+    }
+
+    &.d3 {
+        overflow: hidden;
+        width: @standardwidth;
+
+        &:before {
+            right: 0;
+            border-style: solid;
+            border-left: 0;
+            width: @standardheight;
+            height: 0.6 * @standardheight;
+            .vendor(border-radius, 0 50% 50% 0);
+        }
+
+        &:after {
+            right: 0;
+            bottom: 0;
+            border-style: solid;
+            border-left: 0;
+            width: @standardheight;
+            height: 0.6 * @standardheight;
+            .vendor(border-radius, 0 50% 50% 0);
+        }
+    }
+
+    &.d4 {
+        overflow: hidden;
+        width: @standardwidth;
+
+        &:before {
+            left: 0;
+            border-style: solid;
+            border-top: 0;
+            width: 100%;
+            height: 0.6 * @standardheight;
+        }
+
+        &:after {
+            right: 0;
+            bottom: 0;
+            border-right-style: solid;
+            height: 0.6 * @standardheight;
+        }
+    }
+
+    &.d5 {
+        overflow: hidden;
+        width: @standardwidth;
+
+        &:before {
+            left: 0;
+            border-top-style: solid;
+            border-left-style: solid;
+            width: @standardheight;
+            height: 0.6 * @standardheight;
+        }
+
+        &:after {
+            right: 0;
+            bottom: 0;
+            border-style: solid;
+            border-left: 0;
+            width: @standardheight;
+            height: 0.6 * @standardheight;
+            .vendor(border-radius, 0 50% 50% 0);
+        }
+    }
+
+    &.d6 {
+        overflow: hidden;
+        width: @standardwidth;
+
+        &:before {
+            border-top-style: solid;
+            border-left-style: solid;
+            width: 100%;
+            height: 0.6 * @standardheight;
+            .vendor(border-radius, 61% 34% 0 0);
+        }
+
+        &:after {
+            bottom: 0;
+            border-style: solid;
+            width: 100%;
+            height: 0.6 * @standardheight;
+            .vendor(border-radius, 0 50% 50% 50%);
+        }
+    }
+
+    &.d7 {
+        border-top-style: solid;
+        width: @standardwidth;
+        overflow: hidden;
+
+        &:before {
+            top: 0;
+            height: @standardheight * 1.5;
+            right: 0;
+            margin: auto;
+            border-left-style: solid;
+            width: 0;
+            transform: rotateZ(25deg);
+            transform-origin: 100% 0;
+        }
+    }
+
+    &.d8 {
+        overflow: hidden;
+        width: @standardwidth;
+
+        &:before {
+            border-style: solid;
+            width: 100%;
+            height: 0.6 * @standardheight;
+            .vendor(border-radius, 50%);
+        }
+
+        &:after {
+            bottom: 0;
+            border-style: solid;
+            width: 100%;
+            height: 0.6 * @standardheight;
+            .vendor(border-radius, 50%);
+        }
+    }
+
+    &.d9 {
+        overflow: hidden;
+        width: @standardwidth;
+
+        &:before {
+            border-style: solid;
+            width: 100%;
+            height: 0.6 * @standardheight;
+            .vendor(border-radius, 50% 50% 0 50%);
+
+        }
+
+        &:after {
+            bottom: 0;
+            border-bottom-style: solid;
+            border-right-style: solid;
+            width: 100%;
+            height: 0.6 * @standardheight;
+            .vendor(border-radius, 0 0 61% 34%);
         }
     }
 

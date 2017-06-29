@@ -155,8 +155,24 @@
                 wordsplice = '&lt;/<em class="el">i</em>&gt;&lt;<em class="el">i</em> <em class="cl">class</em>="<em class="nm">AZ sp</em>"&gt;&lt;/<em class="el">i</em>&gt;&lt;<em class="el">i</em> <em class="cl">class</em>="<em class="nm">wd</em>"&gt;'
             }
             var className = character.toLowerCase();
-            if (character === "!") {
-                className = "ex";
+            switch (character) {
+                case !isNaN(character) && character:
+                    className = 'd' + character;
+                    break;
+                case '!':
+                    className = 'ex';
+                    break;
+                case '.':
+                    className = '_p';
+                    break;
+                case ',':
+                    className = '_c';
+                    break;
+                case '?':
+                    className = '_q';
+                    break;
+                default:
+                    className = character;
             }
             var insertion = beginning + className + end;
             if (character === " ") {
