@@ -5,126 +5,236 @@
     <style>
         /*# sourceMappingURL=font.css.map */
     </style>
-
+    <link href="https://fonts.googleapis.com/css?family=Maven+Pro:400,900" rel="stylesheet">
     <link rel="stylesheet" href="font.css" type="text/css">
 
     <style>
         body {
             background-color: #fff;
-            font-size: 14px;
-            padding: 40px 15px;
-            min-height: 1000px;
-            font-family: 'Verdana', 'Arial', sans-serif;
             background-image: radial-gradient(ellipse farthest-corner at center top, #b6d6be, #6ead7f);
+            text-align: center;
+            font-size: 14px;
+            margin: 0;
+            padding: 0;
+            font-family: 'Maven Pro', sans-serif;
         }
 
-        .container {
-            margin: auto;
+        h1, h2, h3, h4 {
+            margin: 0;
+        }
+
+        h1 {
+            padding: 0 0 60px;
+        }
+        h2 {
+            padding: 0 0 30px;
+        }
+
+        button {
+            background: orangered;
+            color: white;
+            -webkit-appearance: none;
+            appearance: none;
+            border: 0;
+            padding: 15px 30px;
+            font-weight: bold;
+            font-size: 18px;
+            border-radius: 0;
+            font-family: 'Maven Pro', sans-serif;
+        }
+
+        .maxwidth {
             width: 800px;
             max-width: 100%;
+            margin: auto;
+        }
+
+        .section {
+            padding: 50px 15px;
+        }
+
+        .header {
+            color: white;
         }
 
         textarea {
             width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            text-align: left;
+            min-height: 75px;
             border: 0;
-            margin: 0 0 50px;
+            margin: 0 0 10px;
         }
 
         .resultpanel {
-            background: #fff;
-            border: 1px solid #8e8e8e;
+            background-color: white;
         }
 
         .resultheader {
-            background-color: #cccccc;
+            background-color: #1b2727;
+            color: white;
+            box-shadow: 12px 12px 15px -7px rgba(0, 0, 0, 0.52);
         }
-        .resultheader ul, .resultheader li {
+
+        .resultheader ul,
+        .resultheader li {
             list-style-type: none;
             margin: 0;
         }
+
         .resultheader ul {
             padding: 0;
         }
+
         .resultheader li {
             display: inline-block;
-            padding: 20px;
             vertical-align: top;
-            border-left: 3px solid rgba(2, 2, 2, 0.02);
-            border-right: 1px solid rgba(14, 14, 14, 0.44);
-            border-top: 3px solid #fff;
-            border-bottom: 3px solid rgba(0, 0, 0, 0.23);
-            width: 25%;
+            padding: 15px;
             box-sizing: border-box;
         }
+
         .resultheader li label {
-            display: block;
             padding: 0 0 8px;
-            font-variant: small-caps;
             font-size: 90%;
+            vertical-align: middle;
+            line-height: 30px;
         }
-        .resultheader li input, .resultheader li select {
+
+        .resultheader li input,
+        .resultheader li select {
             border: 0;
-            min-width: 100px;
+            min-width: 50px;
             min-height: 30px;
+            padding: 0;
         }
+        input[type="color"] {
+            background-color: transparent;
+        }
+
         .resultpanel .display {
-            background: white;
+            min-height: 100px;
+            text-align: left;
+        }
+        .code-place {
+            background-color: #092121;
+            color: white;
+        }
+        .coderesult {
+            text-align: left;
+            font-family: monospace;
+            display: block;
+            background-color: #010e0e;
+            color: white;
             padding: 30px;
+        }
+        .coderesult em {
+            font-style: normal;
+        }
+        .coderesult em.cl {
+            color: #fdc46b;
+        }
+        .coderesult em.nm {
+            color: #a1f398;
+        }
+        .coderesult em.el {
+            color: #d081f7;
         }
     </style>
 
-    <script type="text/javascript" src="preview.js"></script>
+    <script>
+
+        function switcher(character, isCode) {
+            var beginning = '<i class="AZ ';
+            var end = '"></i>';
+            var wordsplice = '</i><i class="AZ sp"></i><i class="AZ wd">'
+            if (isCode) {
+                beginning = '&lt;<em class="el">i</em> <em class="cl">class</em>="<em class="nm">AZ ';
+                end = '</em>"&gt;&lt;/<em class="el">i</em>&gt;';
+                wordsplice = '&lt;/<em class="el">i</em>&gt;&lt;<em class="el">i</em> <em class="cl">class</em>="<em class="nm">AZ sp</em>"&gt;&lt;/<em class="el">i</em>&gt;&lt;<em class="el">i</em> <em class="cl">class</em>="<em class="nm">wd</em>"&gt;'
+            }
+            var className = character.toLowerCase();
+            if (character === "!") {
+                className = "ex";
+            }
+            var insertion = beginning + className + end;
+            if (character === " ") {
+                insertion = wordsplice;
+            }
+            return insertion;
+        }
+
+        function runConverter() {
+            var wordarray = [];
+            for (var i = 0; i < entry.value.length; i++) {
+                wordarray.push(switcher(entry.value.charAt(i), false));
+            }
+            result.innerHTML = '<i class="wd">' + wordarray.join("") + '</i>';
+            window.scrollTo(0, resultbackground.offsetTop);
+
+            window.console.log(resultbackground.getBoundingClientRect())
+            window.console.log(resultbackground.offsetTop)
+            runCoder();
+        }
+
+        function runCoder() {
+            var codearray = [];
+            for (var i = 0; i < entry.value.length; i++) {
+                codearray.push(switcher(entry.value.charAt(i), true))
+            }
+            codearea.innerHTML = '&lt;<em class="el">span</em> <em class="cl">style</em>="<em class="nm">color: ' + fontcolor.value + '; font-size: ' + fontsize.value + 'px;"</em>&gt; &lt;<em class="el">i</em> <em class="cl">class</em>="<em class="nm">wd</em>"&gt;' + codearray.join("") + '&lt;/<em class="el">i</em>&gt;&lt;/<em class="el">span</em>&gt;';
+        }
+
+        function changeFontColor() {
+            result.style.color = fontcolor.value;
+            runCoder();
+        }
+
+        function changeBackgroundColor() {
+            resultbackground.style.backgroundColor = backgroundcolor.value;
+            runCoder();
+        }
+
+        function changeFontSize() {
+            result.style.fontSize = fontsize.value + 'px';
+            runCoder();
+        }
+    </script>
 
 </head>
 
-<body data-feedly-mini="yes" style="background-color: #444;">
+<body>
 
-    <div class="container">
+    <div class="text-place section">
+        <h1>Pure CSS Text Generator</h1>
 
-        <div class="preview">
-            <span class="AZ a"></span>
-            <span class="AZ b"></span>
-            <span class="AZ c"></span>
-            <span class="AZ d"></span>
-            <span class="AZ e"></span>
-            <span class="AZ f"></span>
-            <span class="AZ g"></span>
-            <span class="AZ h"></span>
-            <span class="AZ i"></span>
-            <span class="AZ j"></span>
-            <span class="AZ k"></span>
-            <span class="AZ l"></span>
-            <span class="AZ m"></span>
-            <span class="AZ n"></span>
-            <span class="AZ o"></span>
-            <span class="AZ p"></span>
-            <span class="AZ q"></span>
-            <span class="AZ s"></span>
-            <span class="AZ t"></span>
-            <span class="AZ u"></span>
-            <span class="AZ v"></span>
-            <span class="AZ w"></span>
-            <span class="AZ y"></span>
-            <span class="AZ z"></span>
+        <div class="maxwidth">
+            <textarea id="entry">Test out some text!</textarea>
+            <button id="submitbutton" onClick="runConverter();">See it in CSS!</button>
         </div>
+    </div>
 
-        <textarea id="entry">Test out some text!</textarea>
-        <button id="submit">Convert!</button>
+    <div id="resultbackground" class="resultpanel section">
 
-        <div class="resultpanel">
+            <div class="maxwidth">
+
+            <div id="result" class="display">
+                <i class="wd"><i class="AZ t"></i><i class="AZ e"></i><i class="AZ s"></i><i class="AZ t"></i></i><i class="AZ sp"></i><i class="AZ wd"><i class="AZ o"></i><i class="AZ u"></i><i class="AZ t"></i></i><i class="AZ sp"></i><i class="AZ wd"><i class="AZ s"></i><i class="AZ o"></i><i class="AZ m"></i><i class="AZ e"></i></i><i class="AZ sp"></i><i class="AZ wd"><i class="AZ t"></i><i class="AZ e"></i><i class="AZ x"></i><i class="AZ t"></i></i><i class="AZ sp"></i><i class="AZ wd"><i class="AZ h"></i><i class="AZ e"></i><i class="AZ r"></i><i class="AZ e"></i><i class="AZ ex"></i></i>
+            </div>
+
             <div class="resultheader">
                 <ul>
                     <li>
-                        <label for="textcolor">Font Color</label>
-                        <input id="textcolor" type="color" value="#000000">
+                        <label for="fontcolor">Font Color</label>
+                        <input id="fontcolor" onchange="changeFontColor()" type="color" value="#000000">
                     </li><li>
-                        <label for="backgroundcolor">Background Color</label>
-                        <input id="backgroundcolor" type="color" value="#ffffff">
-                    </li><li>
-                        <label for="textsize">Font Size</label>
-                        <select id="textsize">
+                        <label for="fontsize">Font Size</label>
+                        <select id="fontsize" onchange="changeFontSize()">
                             <option value="8">8</option>
+                            <option value="9">9</option>
                             <option value="10">10</option>
+                            <option value="11">11</option>
                             <option value="12">12</option>
                             <option value="14" selected>14</option>
                             <option value="16">16</option>
@@ -132,6 +242,11 @@
                             <option value="20">20</option>
                             <option value="22">22</option>
                             <option value="24">24</option>
+                            <option value="26">26</option>
+                            <option value="28">28</option>
+                            <option value="36">36</option>
+                            <option value="48">48</option>
+                            <option value="72">72</option>
                         </select>
                     </li><li>
                         <label for="fontweight">Font Weight</label>
@@ -140,15 +255,27 @@
                             <option value="normal" selected>Normal</option>
                             <option value="bold">Bold</option>
                         </select>
+                    </li><li>
+                        <label for="backgroundcolor">Background Color</label>
+                        <input id="backgroundcolor" onchange="changeBackgroundColor()" type="color" value="#ffffff">
                     </li>
                 </ul>
             </div>
-            <div id="result" class="display">
-                <span class="AZ t"></span><span class="AZ e"></span><span class="AZ s"></span><span class="AZ t"></span><span class="AZ space"></span><span class="AZ o"></span><span class="AZ u"></span><span class="AZ t"></span><span class="AZ space"></span><span class="AZ s"></span><span class="AZ o"></span><span class="AZ m"></span><span class="AZ e"></span><span class="AZ space"></span><span class="AZ t"></span><span class="AZ e"></span><span class="AZ x"></span><span class="AZ t"></span><span class="AZ excl"></span>
+
+        </div>
+
+
+        </div>
+    </div>
+
+        <div class="code-place section">
+            <h2>Code</h2>
+            <div class="maxwidth">
+            <div id="codearea" class="coderesult">&lt;<em class="el">span</em> <em class="cl">style</em>="<em class="nm">color: #000000; font-size: 14px;"</em>&gt; &lt;<em class="el">i</em> <em class="cl">class</em>="<em class="nm">wd</em>"&gt;&lt;<em class="el">i</em> <em class="cl">class</em>="<em class="nm">AZ t</em>"&gt;&lt;/<em class="el">i</em>&gt;&lt;<em class="el">i</em> <em class="cl">class</em>="<em class="nm">AZ e</em>"&gt;&lt;/<em class="el">i</em>&gt;&lt;<em class="el">i</em> <em class="cl">class</em>="<em class="nm">AZ s</em>"&gt;&lt;/<em class="el">i</em>&gt;&lt;<em class="el">i</em> <em class="cl">class</em>="<em class="nm">AZ t</em>"&gt;&lt;/<em class="el">i</em>&gt;&lt;/<em class="el">i</em>&gt;&lt;<em class="el">i</em> <em class="cl">class</em>="<em class="nm">AZ sp</em>"&gt;&lt;/<em class="el">i</em>&gt;&lt;<em class="el">i</em> <em class="cl">class</em>="<em class="nm">wd</em>"&gt;&lt;<em class="el">i</em> <em class="cl">class</em>="<em class="nm">AZ o</em>"&gt;&lt;/<em class="el">i</em>&gt;&lt;<em class="el">i</em> <em class="cl">class</em>="<em class="nm">AZ u</em>"&gt;&lt;/<em class="el">i</em>&gt;&lt;<em class="el">i</em> <em class="cl">class</em>="<em class="nm">AZ t</em>"&gt;&lt;/<em class="el">i</em>&gt;&lt;/<em class="el">i</em>&gt;&lt;<em class="el">i</em> <em class="cl">class</em>="<em class="nm">AZ sp</em>"&gt;&lt;/<em class="el">i</em>&gt;&lt;<em class="el">i</em> <em class="cl">class</em>="<em class="nm">wd</em>"&gt;&lt;<em class="el">i</em> <em class="cl">class</em>="<em class="nm">AZ s</em>"&gt;&lt;/<em class="el">i</em>&gt;&lt;<em class="el">i</em> <em class="cl">class</em>="<em class="nm">AZ o</em>"&gt;&lt;/<em class="el">i</em>&gt;&lt;<em class="el">i</em> <em class="cl">class</em>="<em class="nm">AZ m</em>"&gt;&lt;/<em class="el">i</em>&gt;&lt;<em class="el">i</em> <em class="cl">class</em>="<em class="nm">AZ e</em>"&gt;&lt;/<em class="el">i</em>&gt;&lt;/<em class="el">i</em>&gt;&lt;<em class="el">i</em> <em class="cl">class</em>="<em class="nm">AZ sp</em>"&gt;&lt;/<em class="el">i</em>&gt;&lt;<em class="el">i</em> <em class="cl">class</em>="<em class="nm">wd</em>"&gt;&lt;<em class="el">i</em> <em class="cl">class</em>="<em class="nm">AZ t</em>"&gt;&lt;/<em class="el">i</em>&gt;&lt;<em class="el">i</em> <em class="cl">class</em>="<em class="nm">AZ e</em>"&gt;&lt;/<em class="el">i</em>&gt;&lt;<em class="el">i</em> <em class="cl">class</em>="<em class="nm">AZ x</em>"&gt;&lt;/<em class="el">i</em>&gt;&lt;<em class="el">i</em> <em class="cl">class</em>="<em class="nm">AZ t</em>"&gt;&lt;/<em class="el">i</em>&gt;&lt;/<em class="el">i</em>&gt;&lt;<em class="el">i</em> <em class="cl">class</em>="<em class="nm">AZ sp</em>"&gt;&lt;/<em class="el">i</em>&gt;&lt;<em class="el">i</em> <em class="cl">class</em>="<em class="nm">wd</em>"&gt;&lt;<em class="el">i</em> <em class="cl">class</em>="<em class="nm">AZ h</em>"&gt;&lt;/<em class="el">i</em>&gt;&lt;<em class="el">i</em> <em class="cl">class</em>="<em class="nm">AZ e</em>"&gt;&lt;/<em class="el">i</em>&gt;&lt;<em class="el">i</em> <em class="cl">class</em>="<em class="nm">AZ r</em>"&gt;&lt;/<em class="el">i</em>&gt;&lt;<em class="el">i</em> <em class="cl">class</em>="<em class="nm">AZ e</em>"&gt;&lt;/<em class="el">i</em>&gt;&lt;<em class="el">i</em> <em class="cl">class</em>="<em class="nm">AZ ex</em>"&gt;&lt;/<em class="el">i</em>&gt;&lt;/<em class="el">i</em>&gt;&lt;/<em class="el">span</em>&gt;</div>
             </div>
         </div>
 
-    </div>
+
 
 </body>
 
