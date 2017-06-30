@@ -10,31 +10,32 @@ function switcher(character, isCode) {
         wordbreak = '&lt;/<em class="el">i</em>&gt;&lt;br&gt;&lt;<em class="el">i</em>&lt;<em class="el">i</em> <em class="cl">class</em>="<em class="nm">AZ wd</em>"&gt;'
     }
     var className = character.toLowerCase();
-    switch (character) {
-        case !isNaN(character) && character:
-            className = 'd' + character;
-            break;
-        case '!':
-            className = 'ex';
-            break;
-        case '.':
-            className = '_p';
-            break;
-        case ',':
-            className = '_c';
-            break;
-        case '?':
-            className = '_q';
-            break;
-        default:
-            className = character;
-    }
-    var insertion = beginning + className + end;
+    var isNumber = "0123456789".indexOf(character) >= 0;
+    var insertion;
     if (character === " ") {
         insertion = wordsplice;
-    }
-    if (character === '\n' || character === '\r') {
+    } else if (character === '\n' || character === '\r') {
         insertion = wordbreak;
+    } else if (isNumber) {
+        insertion = beginning + 'd' + character + end;
+    } else if (!isNumber) {
+        switch (character) {
+            case '!':
+                className = 'ex';
+                break;
+            case '.':
+                className = '_p';
+                break;
+            case ',':
+                className = '_c';
+                break;
+            case '?':
+                className = '_q';
+                break;
+            default:
+                className = character;
+        }
+        insertion = beginning + className + end;
     }
     return insertion;
 }
