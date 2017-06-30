@@ -2,10 +2,12 @@ function switcher(character, isCode) {
     var beginning = '<i class="AZ ';
     var end = '"></i>';
     var wordsplice = '</i><i class="AZ wd">'
+    var wordbreak = '</i><br><i class="AZ wd">'
     if (isCode) {
         beginning = '&lt;<em class="el">i</em> <em class="cl">class</em>="<em class="nm">AZ ';
         end = '</em>"&gt;&lt;/<em class="el">i</em>&gt;';
         wordsplice = '&lt;/<em class="el">i</em>&gt;&lt;<em class="el">i</em>&lt;<em class="el">i</em> <em class="cl">class</em>="<em class="nm">wd</em>"&gt;'
+        wordbreak = '&lt;/<em class="el">i</em>&gt;&lt;br&gt;&lt;<em class="el">i</em>&lt;<em class="el">i</em> <em class="cl">class</em>="<em class="nm">AZ wd</em>"&gt;'
     }
     var className = character.toLowerCase();
     switch (character) {
@@ -30,6 +32,9 @@ function switcher(character, isCode) {
     var insertion = beginning + className + end;
     if (character === " ") {
         insertion = wordsplice;
+    }
+    if (character === '\n' || character === '\r') {
+        insertion = wordbreak;
     }
     return insertion;
 }
