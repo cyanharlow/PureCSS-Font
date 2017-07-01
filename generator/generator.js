@@ -9,7 +9,8 @@ function switcher(character, isCode) {
         wordsplice = '&lt;/<em class="el">i</em>&gt;&lt;<em class="el">i</em>&lt;<em class="el">i</em> <em class="cl">class</em>="<em class="nm">wd</em>"&gt;'
         wordbreak = '&lt;/<em class="el">i</em>&gt;&lt;br&gt;&lt;<em class="el">i</em>&lt;<em class="el">i</em> <em class="cl">class</em>="<em class="nm">AZ wd</em>"&gt;'
     }
-    var className = character.toLowerCase();
+    var className = character;
+
     var isNumber = "0123456789".indexOf(character) >= 0;
     var insertion;
     if (character === " ") {
@@ -18,7 +19,13 @@ function switcher(character, isCode) {
         insertion = wordbreak;
     } else if (isNumber) {
         insertion = beginning + 'd' + character + end;
-    } else if (!isNumber) {
+    } else if (character.match(/[a-zA-Z]/i)) {
+        var caser = 'l';
+        if (character === character.toUpperCase()) {
+            var caser = 'u';
+        }
+        insertion = beginning + caser + character + end;
+    } else {
         switch (character) {
             case '!':
                 className = 'ex';
