@@ -36,6 +36,12 @@ function switcher(character, isCode) {
             case ',':
                 className = '_c';
                 break;
+            case ':':
+                className = '_cl';
+                break;
+            case ';':
+                className = '_sc';
+                break;
             case '?':
                 className = '_q';
                 break;
