@@ -13,16 +13,13 @@
 
     <div class="text-place section">
         <h1>Pure CSS Font</h1>
-        <h2>Text Generator</h2>
+        <h2>In-Browser CSS/HTML Text Editor & Text Generator</h2>
 
         <div class="medwidth">
 
-            <h3>Why use a css font?</h3>
-            <ol>
-                <li><b>Privacy</b>: For content that you want to make available and public, but  keep off search listings.</li>
-                <li><b>CAPTCHA</b>: To easily generate text that can't be selected for copying and pasting.</li>
-                <li><b>Fun</b>: Just because.</li>
-            </ol>
+            <p>
+                For private, SEO-hidden, unselectable text. Deter plagiarism and spambots!
+            </p>
         </div>
     </div>
     <div class="resultpanel section">
@@ -30,10 +27,20 @@
             <div class="resultheader">
                 <ul>
                     <li>
-                        <label for="fontcolor">Font Color</label>
-                        <input id="fontcolor" onchange="changeFontColor()" type="color" value="#000000">
+                        <button id="colortrigger">
+                            <div class="colorbox">A</div>
+                        </button>
+                        <div class="colorpanel">
+                            <div class="handle"></div>
+                            <div class="halves co">
+                                <label for="backgroundcolor">Text</label>
+                                <input id="fontcolor" onchange="changeFontColor()" type="color" value="#000000">
+                            </div>
+                            <div class="halves bg">
+                                <label for="backgroundcolor">Background</label>
+                                <input id="backgroundcolor" onchange="changeBackgroundColor()" type="color" value="#ffffff">
+                        </div></div>
                     </li><li>
-                        <label for="fontsize">Font Size</label>
                         <select id="fontsize" onchange="changeFontSize()">
                             <option value="8">8</option>
                             <option value="9">9</option>
@@ -41,10 +48,10 @@
                             <option value="11">11</option>
                             <option value="12">12</option>
                             <option value="14">14</option>
-                            <option value="16">16</option>
+                            <option value="16" selected>16</option>
                             <option value="18">18</option>
                             <option value="20">20</option>
-                            <option value="22" selected>22</option>
+                            <option value="22">22</option>
                             <option value="24">24</option>
                             <option value="26">26</option>
                             <option value="28">28</option>
@@ -53,14 +60,25 @@
                             <option value="72">72</option>
                         </select>
                     </li><li>
-                        <label for="fontweight">Font Weight</label>
-                        <select id="fontweight" onchange="changeFontWeight()">
-                            <option value="AZLight" selected>Light</option>
-                            <option value="AZBold">Bold</option>
-                        </select>
+                        <button id="fontbold">
+                            <strong>B</strong>
+                        </button>
+                        <button id="fontitalic">
+                            <em>I</em>
+                        </button>
+                        <button id="fontunderline">
+                            <u>U</u>
+                        </button>
                     </li><li>
-                        <label for="backgroundcolor">Background Color</label>
-                        <input id="backgroundcolor" onchange="changeBackgroundColor()" type="color" value="#ffffff">
+                        <button id="fontleft" class="alignleft">
+                            <hr class="long"><hr class="mid"><hr class="short">
+                        </button>
+                        <button id="fontcenter" class="aligncenter">
+                            <hr class="long"><hr class="mid"><hr class="short">
+                        </button>
+                        <button id="fontcenter" class="alignright">
+                            <hr class="long"><hr class="mid"><hr class="short">
+                        </button>
                     </li>
                 </ul>
             </div>
@@ -74,7 +92,7 @@
 
         </div>
 
-            <button id="submitbutton" onClick="runConverter();">See it in CSS!</button>
+            <button id="submitbutton" class="runconverter" onClick="runConverter();">Get the code!</button>
 
         </div>
 
