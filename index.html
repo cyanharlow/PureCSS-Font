@@ -14,14 +14,13 @@
     <div class="text-place section">
         <h1>Pure CSS Font</h1>
         <h2>In-Browser CSS/HTML Text Editor & Text Generator</h2>
-
         <div class="medwidth">
-
             <p>
                 For private, SEO-hidden, unselectable text. Deter plagiarism and spambots!
             </p>
         </div>
     </div>
+
     <div class="resultpanel section">
         <div class="maxwidth editorback">
             <div class="resultheader">
@@ -60,23 +59,17 @@
                             <option value="72">72</option>
                         </select>
                     </li><li>
-                        <button id="fontbold">
-                            <strong>B</strong>
-                        </button>
-                        <button id="fontitalic">
-                            <em>I</em>
-                        </button>
-                        <button id="fontunderline">
-                            <u>U</u>
-                        </button>
+                        <button data-stb="1" data-az-style="bold">B</button>
+                        <button data-stb="1" data-az-style="italic">I</button>
+                        <button data-stb="1" data-az-style="underline">U</button>
                     </li><li>
-                        <button id="fontleft" class="alignleft">
+                        <button data-az-align="left">
                             <hr class="long"><hr class="mid"><hr class="short">
                         </button>
-                        <button id="fontcenter" class="aligncenter">
+                        <button data-az-align="center" class="selected">
                             <hr class="long"><hr class="mid"><hr class="short">
                         </button>
-                        <button id="fontcenter" class="alignright">
+                        <button data-az-align="right">
                             <hr class="long"><hr class="mid"><hr class="short">
                         </button>
                     </li>
@@ -88,20 +81,22 @@
             </div>
 
             <div id="result"></div>
-            <!-- div id="result" class="display" data-az-weight="AZLight" style="font-size: 22px;" data-select-mode="false"><i class="azwd" data-azselect="false"><i class="AZ us" data-azselect="false"></i><i class="AZ lp" data-azselect="false"></i><i class="AZ lh" data-azselect="false"></i><i class="AZ li" data-azselect="false"></i><i class="AZ ln" data-azselect="false"></i><i class="AZ lx" data-azselect="false"></i><i class="AZ sp" data-azselect="false"></i></i><i class="azwd" data-azselect="false"><i class="AZ lo" data-azselect="false"></i><i class="AZ lf" data-azselect="false"></i><i class="AZ sp" data-azselect="false"></i></i><i class="azwd" data-azselect="false"><i class="AZ lb" data-azselect="false"></i><i class="AZ ll" data-azselect="false"></i><i class="AZ la" data-azselect="false"></i><i class="AZ lc" data-azselect="false"></i><i class="AZ lk" data-azselect="false"></i><i class="AZ sp" data-azselect="false"></i></i><i class="azwd" data-azselect="false"><i class="AZ lq" data-azselect="false"></i><i class="AZ lu" data-azselect="false"></i><i class="AZ la" data-azselect="false"></i><i class="AZ lr" data-azselect="false"></i><i class="AZ lt" data-azselect="false"></i><i class="AZ lz" data-azselect="false"></i><i class="AZ _44" data-azselect="false"></i><i class="AZ sp" data-azselect="false"></i></i><i class="azwd" data-azselect="false"><i class="AZ lj" data-azselect="false"></i><i class="AZ lu" data-azselect="false"></i><i class="AZ ld" data-azselect="false"></i><i class="AZ lg" data-azselect="false"></i><i class="AZ le" data-azselect="false"></i><i class="AZ sp" data-azselect="false"></i></i><i class="azwd" data-azselect="false"><i class="AZ lm" data-azselect="false"></i><i class="AZ ly" data-azselect="false"></i><i class="AZ sp" data-azselect="false"></i></i><i class="azwd" data-azselect="false"><i class="AZ lv" data-azselect="false"></i><i class="AZ lo" data-azselect="false"></i><i class="AZ lw" data-azselect="false"></i><i class="AZ _46" data-azselect="false"></i></i></div -->
 
         </div>
 
-            <button id="submitbutton" class="runconverter" onClick="runConverter();">Get the code!</button>
+            <button id="submitbutton" class="runconverter" onClick="runCoder();">Get the code!</button>
 
         </div>
 
-        <div class="code-place section">
+        <div id="codehtml" class="code-place section" style="display: none;">
             <h2>HTML</h2>
-            <p>Place this wherever you want your text to show</p>
+            <p>Place this wherever you want your text to show up:</p>
             <div class="maxwidth">
 
-                <div id="codearea" class="coderesult">&lt;<em class="el">span</em> <em class="cl">data-az-weight</em>="<em class="nm">AZLight</em>" <em class="cl">style</em>="<em class="nm">color: #000000; font-size: 22px;"</em>&gt; &lt;<em class="el">i</em> <em class="cl">class</em>="<em class="nm">azwd</em>"&gt;&lt;<em class="el">i</em> <em class="cl">class</em>="<em class="nm">AZ us</em>"&gt;&lt;/<em class="el">i</em>&gt;&lt;<em class="el">i</em> <em class="cl">class</em>="<em class="nm">AZ lp</em>"&gt;&lt;/<em class="el">i</em>&gt;&lt;<em class="el">i</em> <em class="cl">class</em>="<em class="nm">AZ lh</em>"&gt;&lt;/<em class="el">i</em>&gt;&lt;<em class="el">i</em> <em class="cl">class</em>="<em class="nm">AZ li</em>"&gt;&lt;/<em class="el">i</em>&gt;&lt;<em class="el">i</em> <em class="cl">class</em>="<em class="nm">AZ ln</em>"&gt;&lt;/<em class="el">i</em>&gt;&lt;<em class="el">i</em> <em class="cl">class</em>="<em class="nm">AZ lx</em>"&gt;&lt;/<em class="el">i</em>&gt;&lt;<em class="el">i</em> <em class="cl">class</em>="<em class="nm">AZ sp</em>"&gt;&lt;/<em class="el">i</em>&gt;&lt;/<em class="el">i</em>&gt;&lt;<em class="el">i</em>&lt;<em class="el">i</em> <em class="cl">class</em>="<em class="nm">wd</em>"&gt;&lt;<em class="el">i</em> <em class="cl">class</em>="<em class="nm">AZ lo</em>"&gt;&lt;/<em class="el">i</em>&gt;&lt;<em class="el">i</em> <em class="cl">class</em>="<em class="nm">AZ lf</em>"&gt;&lt;/<em class="el">i</em>&gt;&lt;<em class="el">i</em> <em class="cl">class</em>="<em class="nm">AZ sp</em>"&gt;&lt;/<em class="el">i</em>&gt;&lt;/<em class="el">i</em>&gt;&lt;<em class="el">i</em>&lt;<em class="el">i</em> <em class="cl">class</em>="<em class="nm">wd</em>"&gt;&lt;<em class="el">i</em> <em class="cl">class</em>="<em class="nm">AZ lb</em>"&gt;&lt;/<em class="el">i</em>&gt;&lt;<em class="el">i</em> <em class="cl">class</em>="<em class="nm">AZ ll</em>"&gt;&lt;/<em class="el">i</em>&gt;&lt;<em class="el">i</em> <em class="cl">class</em>="<em class="nm">AZ la</em>"&gt;&lt;/<em class="el">i</em>&gt;&lt;<em class="el">i</em> <em class="cl">class</em>="<em class="nm">AZ lc</em>"&gt;&lt;/<em class="el">i</em>&gt;&lt;<em class="el">i</em> <em class="cl">class</em>="<em class="nm">AZ lk</em>"&gt;&lt;/<em class="el">i</em>&gt;&lt;<em class="el">i</em> <em class="cl">class</em>="<em class="nm">AZ sp</em>"&gt;&lt;/<em class="el">i</em>&gt;&lt;/<em class="el">i</em>&gt;&lt;<em class="el">i</em>&lt;<em class="el">i</em> <em class="cl">class</em>="<em class="nm">wd</em>"&gt;&lt;<em class="el">i</em> <em class="cl">class</em>="<em class="nm">AZ lq</em>"&gt;&lt;/<em class="el">i</em>&gt;&lt;<em class="el">i</em> <em class="cl">class</em>="<em class="nm">AZ lu</em>"&gt;&lt;/<em class="el">i</em>&gt;&lt;<em class="el">i</em> <em class="cl">class</em>="<em class="nm">AZ la</em>"&gt;&lt;/<em class="el">i</em>&gt;&lt;<em class="el">i</em> <em class="cl">class</em>="<em class="nm">AZ lr</em>"&gt;&lt;/<em class="el">i</em>&gt;&lt;<em class="el">i</em> <em class="cl">class</em>="<em class="nm">AZ lt</em>"&gt;&lt;/<em class="el">i</em>&gt;&lt;<em class="el">i</em> <em class="cl">class</em>="<em class="nm">AZ lz</em>"&gt;&lt;/<em class="el">i</em>&gt;&lt;<em class="el">i</em> <em class="cl">class</em>="<em class="nm">AZ _44</em>"&gt;&lt;/<em class="el">i</em>&gt;&lt;<em class="el">i</em> <em class="cl">class</em>="<em class="nm">AZ sp</em>"&gt;&lt;/<em class="el">i</em>&gt;&lt;/<em class="el">i</em>&gt;&lt;<em class="el">i</em>&lt;<em class="el">i</em> <em class="cl">class</em>="<em class="nm">wd</em>"&gt;&lt;<em class="el">i</em> <em class="cl">class</em>="<em class="nm">AZ lj</em>"&gt;&lt;/<em class="el">i</em>&gt;&lt;<em class="el">i</em> <em class="cl">class</em>="<em class="nm">AZ lu</em>"&gt;&lt;/<em class="el">i</em>&gt;&lt;<em class="el">i</em> <em class="cl">class</em>="<em class="nm">AZ ld</em>"&gt;&lt;/<em class="el">i</em>&gt;&lt;<em class="el">i</em> <em class="cl">class</em>="<em class="nm">AZ lg</em>"&gt;&lt;/<em class="el">i</em>&gt;&lt;<em class="el">i</em> <em class="cl">class</em>="<em class="nm">AZ le</em>"&gt;&lt;/<em class="el">i</em>&gt;&lt;<em class="el">i</em> <em class="cl">class</em>="<em class="nm">AZ sp</em>"&gt;&lt;/<em class="el">i</em>&gt;&lt;/<em class="el">i</em>&gt;&lt;<em class="el">i</em>&lt;<em class="el">i</em> <em class="cl">class</em>="<em class="nm">wd</em>"&gt;&lt;<em class="el">i</em> <em class="cl">class</em>="<em class="nm">AZ lm</em>"&gt;&lt;/<em class="el">i</em>&gt;&lt;<em class="el">i</em> <em class="cl">class</em>="<em class="nm">AZ ly</em>"&gt;&lt;/<em class="el">i</em>&gt;&lt;<em class="el">i</em> <em class="cl">class</em>="<em class="nm">AZ sp</em>"&gt;&lt;/<em class="el">i</em>&gt;&lt;/<em class="el">i</em>&gt;&lt;<em class="el">i</em>&lt;<em class="el">i</em> <em class="cl">class</em>="<em class="nm">wd</em>"&gt;&lt;<em class="el">i</em> <em class="cl">class</em>="<em class="nm">AZ lv</em>"&gt;&lt;/<em class="el">i</em>&gt;&lt;<em class="el">i</em> <em class="cl">class</em>="<em class="nm">AZ lo</em>"&gt;&lt;/<em class="el">i</em>&gt;&lt;<em class="el">i</em> <em class="cl">class</em>="<em class="nm">AZ lw</em>"&gt;&lt;/<em class="el">i</em>&gt;&lt;<em class="el">i</em> <em class="cl">class</em>="<em class="nm">AZ _46</em>"&gt;&lt;/<em class="el">i</em>&gt;&lt;/<em class="el">i</em>&gt;&lt;/<em class="el">span</em>&gt;</div>
+                <div id="codearea" class="coderesult">
+
+
+                </div>
 
             <h2>CSS</h2>
             <p>Add this to your &lt;head&gt;</p>
