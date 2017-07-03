@@ -1,7 +1,9 @@
 # Pure CSS Font
 A customizable, scalable font made entirely of css and html.
 
-Having been unsatisfied with other pure CSS font options, I've developed one that can be used on any background, can be colored by its parent element, scale in size according to the parent em units, and even support light and bold font weights.
+For private, SEO-hidden, CAPTCHA-friendly unselectable text. Deter plagiarism and spambots!
 
+The theme is based on em units, so it scales in size like any other font.
+Its color will also be inherited according to its parents color attribute.
 
 Give it a try at [cyanharlow.github.io/PureCSS-Font](https://cyanharlow.github.io/PureCSS-Font/)
