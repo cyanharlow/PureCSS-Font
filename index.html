@@ -28,61 +28,22 @@
             <div class="resultheader">
                 <ul>
                     <li>
-                        <button id="colortrigger">
-                            <div class="colorbox">A</div>
-                        </button>
-                        <div class="colorpanel">
-                            <div class="handle"></div>
-                            <div class="halves co">
-                                <label for="backgroundcolor">Text</label>
-                                <input id="fontcolor" onchange="changeFontColor()" type="color" value="#000000">
-                            </div>
-                            <div class="halves bg">
-                                <label for="backgroundcolor">Background</label>
-                                <input id="backgroundcolor" onchange="changeBackgroundColor()" type="color" value="#ffffff">
-                        </div></div>
-                    </li><li>
-                        <select id="fontsize" onchange="changeFontSize()">
-                            <option value="8">8</option>
-                            <option value="9">9</option>
-                            <option value="10">10</option>
-                            <option value="11">11</option>
-                            <option value="12">12</option>
-                            <option value="14">14</option>
-                            <option value="16" selected>16</option>
-                            <option value="18">18</option>
-                            <option value="20">20</option>
-                            <option value="22">22</option>
-                            <option value="24">24</option>
-                            <option value="26">26</option>
-                            <option value="28">28</option>
-                            <option value="36">36</option>
-                            <option value="48">48</option>
-                            <option value="72">72</option>
-                        </select>
-                    </li><li>
                         <button data-stb="1" data-az-style="bold">B</button>
                         <button data-stb="1" data-az-style="italic">I</button>
                         <button data-stb="1" data-az-style="underline">U</button>
                     </li><li>
-                        <button data-az-align="left">
-                            <hr class="long"><hr class="mid"><hr class="short">
-                        </button>
-                        <button data-az-align="center" class="selected">
-                            <hr class="long"><hr class="mid"><hr class="short">
-                        </button>
-                        <button data-az-align="right">
-                            <hr class="long"><hr class="mid"><hr class="short">
-                        </button>
+                        <button data-selectall="1">Select All</button>
                     </li>
                 </ul>
             </div>
 
-            <span id="texteditor">
-                <i class="azwd"><div id="cursorline"></div></i>
-            </span>
 
-            <div id="result"></div>
+
+            <div id="result" class="white">
+                <span id="texteditor">
+                    <i class="azwd"><div id="cursorline"></div></i>
+                </span>
+            </div>
 
         </div>
 
