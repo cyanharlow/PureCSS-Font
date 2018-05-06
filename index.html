@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 
@@ -12,7 +11,6 @@
     <meta name="keywords" content="cyanharlow, diana, css, art" />
 
     <link href="https://fonts.googleapis.com/css?family=Maven+Pro:400,900" rel="stylesheet">
-    <link rel="stylesheet" href="font.css" type="text/css">
     <link rel="stylesheet" href="generator/generator.css" type="text/css">
 </head>
 
@@ -20,13 +18,12 @@
 
     <div class="text-place section">
         <h1>Pure CSS Font</h1>
-        <h2>In-Browser CSS/HTML Text Editor & Text Generator</h2>
+        <h2>CSS/HTML Generator</h2>
 
         <div class="medwidth">
             <p>
                 For private, SEO-hidden, CAPTCHA-friendly unselectable text.
-                <br>
-                Deter plagiarism and spambots!
+                <br> Deter plagiarism and spambots!
             </p>
         </div>
         <div class="linksection">
@@ -35,78 +32,131 @@
 
             <a href="https://github.com/cyanharlow" target="_blank">GitHub.com/cyanHarlow</a>
             <span class="separator">|</span>
-            <a href="http://diana.adrianne.com" target="_blank">Website</a>
+            <a href="http://diana-adrianne.com" target="_blank">Website</a>
         </div>
     </div>
 
     <div class="resultpanel section">
+        <h3>Try it</h3>
+        <p>Enter some text:</p>
         <div class="maxwidth editorback">
-            <div class="resultheader">
-                <ul>
-                    <li>
-                        <button data-stb="1" data-az-style="b">B</button>
-                        <button data-stb="1" data-az-style="i">I</button>
-                        <button data-stb="1" data-az-style="u">U</button>
-                    </li>
-                </ul>
-            </div>
 
-
-
-            <div id="result" class="white">
-                <span id="texteditor">
-                    <i class="azwd"><div id="cursorline"></div></i>
-                </span>
-            </div>
+            <textarea id="result" class="white"></textarea>
 
         </div>
 
-            <button id="submitbutton" class="runconverter" onClick="runCoder();">Get the code!</button>
-        </div>
+        <ul class="buttonsets">
+            <li>
+                <input id="bold" type="checkbox" data-dat="bold"></input>
+                <label for="bold" class="bold">B</label>
+            </li>
+            <li>
+                <input id="ital" type="checkbox" data-dat="italic"></input>
+                <label for="ital" class="italic">I</label>
+            </li>
+            <li>
+                <input id="unde" type="checkbox" data-dat="underlined"></input>
+                <label for="unde" class="underline">U</label>
+            </li>
+        </ul>
 
-<div class="section" style="display: none;">
-
-<div class="maxwidth">
-
-
-    <div class="sample">
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sollicitudin dictum libero, quis sodales nunc imperdiet nec. Maecenas quis nunc diam. Nam quis erat metus. Sed facilisis augue et orci volutpat molestie.
-
-        <i class="azwd"><i class="AZ _77"></i><i class="AZ _97"></i><i class="AZ _101"></i><i class="AZ _99"></i><i class="AZ _101"></i><i class="AZ _110"></i><i class="AZ _97"></i><i class="AZ _115"></i><i class="AZ _32"></i></i><i class="azwd"><i class="AZ _112"></i><i class="AZ _101"></i><i class="AZ _108"></i><i class="AZ _108"></i><i class="AZ _101"></i><i class="AZ _110"></i><i class="AZ _116"></i><i class="AZ _101"></i><i class="AZ _115"></i><i class="AZ _113"></i><i class="AZ _117"></i><i class="AZ _101"></i><i class="AZ _44"></i><i class="AZ _32"></i></i><i class="azwd"><i class="AZ _110"></i><i class="AZ _117"></i><i class="AZ _110"></i><i class="AZ _99"></i><i class="AZ _32"></i></i><i class="azwd"><i class="AZ _113"></i><i class="AZ _117"></i><i class="AZ _105"></i><i class="AZ _115"></i><i class="AZ _32"></i></i><i class="azwd"><i class="AZ _102"></i><i class="AZ _97"></i><i class="AZ _99"></i><i class="AZ _105"></i><i class="AZ _108"></i><i class="AZ _105"></i><i class="AZ _115"></i><i class="AZ _105"></i><i class="AZ _115"></i><i class="AZ _32"></i></i><i class="azwd"><i class="AZ _108"></i><i class="AZ _111"></i><i class="AZ _98"></i><i class="AZ _111"></i><i class="AZ _114"></i><i class="AZ _116"></i><i class="AZ _105"></i><i class="AZ _115"></i><i class="AZ _44"></i><i class="AZ _32"></i></i><i class="azwd"><i class="AZ _116"></i><i class="AZ _101"></i><i class="AZ _108"></i><i class="AZ _108"></i><i class="AZ _117"></i><i class="AZ _115"></i><i class="AZ _32"></i></i><i class="azwd"><i class="AZ _111"></i><i class="AZ _100"></i><i class="AZ _105"></i><i class="AZ _111"></i><i class="AZ _32"></i></i><i class="azwd"><i class="AZ _108"></i><i class="AZ _97"></i><i class="AZ _99"></i><i class="AZ _105"></i><i class="AZ _110"></i><i class="AZ _105"></i><i class="AZ _97"></i><i class="AZ _32"></i></i><i class="azwd"><i class="AZ _117"></i><i class="AZ _114"></i><i class="AZ _110"></i><i class="AZ _97"></i><i class="AZ _44"></i><i class="AZ _32"></i></i><i class="azwd"><i class="AZ _101"></i><i class="AZ _117"></i><i class="AZ _32"></i></i><i class="azwd"><i class="AZ _108"></i><i class="AZ _111"></i><i class="AZ _98"></i><i class="AZ _111"></i><i class="AZ _114"></i><i class="AZ _116"></i><i class="AZ _105"></i><i class="AZ _115"></i><i class="AZ _32"></i></i><i class="azwd"><i class="AZ _106"></i><i class="AZ _117"></i><i class="AZ _115"></i><i class="AZ _116"></i><i class="AZ _111"></i><i class="AZ _32"></i></i><i class="azwd"><i class="AZ _110"></i><i class="AZ _117"></i><i class="AZ _110"></i><i class="AZ _99"></i><i class="AZ _32"></i></i><i class="azwd"><i class="AZ _113"></i><i class="AZ _117"></i><i class="AZ _105"></i><i class="AZ _115"></i><i class="AZ _32"></i></i><i class="azwd"><i class="AZ _100"></i><i class="AZ _117"></i><i class="AZ _105"></i><i class="AZ _46"></i><i class="AZ _32"></i></i><i class="azwd"><i class="AZ _69"></i><i class="AZ _116"></i><i class="AZ _105"></i><i class="AZ _97"></i><i class="AZ _109"></i><i class="AZ _32"></i></i><i class="azwd"><i class="AZ _116"></i><i class="AZ _105"></i><i class="AZ _110"></i><i class="AZ _99"></i><i class="AZ _105"></i><i class="AZ _100"></i><i class="AZ _117"></i><i class="AZ _110"></i><i class="AZ _116"></i><i class="AZ _32"></i></i><i class="azwd"><i class="AZ _118"></i><i class="AZ _101"></i><i class="AZ _108"></i><i class="AZ _105"></i><i class="AZ _116"></i><i class="AZ _32"></i></i><i class="azwd"><i class="AZ _111"></i><i class="AZ _114"></i><i class="AZ _99"></i><i class="AZ _105"></i><i class="AZ _44"></i><i class="AZ _32"></i></i><i class="azwd"><i class="AZ _118"></i><i class="AZ _105"></i><i class="AZ _116"></i><i class="AZ _97"></i><i class="AZ _101"></i><i class="AZ _32"></i></i><i class="azwd"><i class="AZ _117"></i><i class="AZ _108"></i><i class="AZ _116"></i><i class="AZ _114"></i><i class="AZ _105"></i><i class="AZ _99"></i><i class="AZ _105"></i><i class="AZ _101"></i><i class="AZ _115"></i><i class="AZ _32"></i></i><i class="azwd"><i class="AZ _108"></i><i class="AZ _101"></i><i class="AZ _111"></i><i class="AZ _32"></i></i><i class="azwd"><i class="AZ _109"></i><i class="AZ _111"></i><i class="AZ _108"></i><i class="AZ _101"></i><i class="AZ _115"></i><i class="AZ _116"></i><i class="AZ _105"></i><i class="AZ _101"></i><i class="AZ _32"></i></i><i class="azwd"><i class="AZ _105"></i><i class="AZ _110"></i><i class="AZ _46"></i><i class="AZ _32"></i></i><i class="azwd"><i class="AZ _73"></i><i class="AZ _110"></i><i class="AZ _32"></i></i><i class="azwd"><i class="AZ _97"></i><i class="AZ _32"></i></i><i class="azwd"><i class="AZ _99"></i><i class="AZ _117"></i><i class="AZ _114"></i><i class="AZ _115"></i><i class="AZ _117"></i><i class="AZ _115"></i><i class="AZ _32"></i></i><i class="azwd"><i class="AZ _97"></i><i class="AZ _117"></i><i class="AZ _103"></i><i class="AZ _117"></i><i class="AZ _101"></i><i class="AZ _46"></i><i class="AZ _32"></i></i><i class="azwd"><i class="AZ _69"></i><i class="AZ _116"></i><i class="AZ _105"></i><i class="AZ _97"></i><i class="AZ _109"></i><i class="AZ _32"></i></i><i class="azwd"><i class="AZ _110"></i><i class="AZ _111"></i><i class="AZ _110"></i><i class="AZ _32"></i></i><i class="azwd"><i class="AZ _112"></i><i class="AZ _117"></i><i class="AZ _108"></i><i class="AZ _118"></i><i class="AZ _105"></i><i class="AZ _110"></i><i class="AZ _97"></i><i class="AZ _114"></i><i class="AZ _32"></i></i><i class="azwd"><i class="AZ _109"></i><i class="AZ _97"></i><i class="AZ _115"></i><i class="AZ _115"></i><i class="AZ _97"></i><i class="AZ _46"></i><i class="AZ _32"></i></i><i class="azwd"><i class="AZ _86"></i><i class="AZ _105"></i><i class="AZ _118"></i><i class="AZ _97"></i><i class="AZ _109"></i><i class="AZ _117"></i><i class="AZ _115"></i><i class="AZ _32"></i></i><i class="azwd"><i class="AZ _112"></i><i class="AZ _111"></i><i class="AZ _114"></i><i class="AZ _116"></i><i class="AZ _116"></i><i class="AZ _105"></i><i class="AZ _116"></i><i class="AZ _111"></i><i class="AZ _114"></i><i class="AZ _32"></i></i><i class="azwd"><i class="AZ _114"></i><i class="AZ _117"></i><i class="AZ _116"></i><i class="AZ _114"></i><i class="AZ _117"></i><i class="AZ _109"></i><i class="AZ _32"></i></i><i class="azwd"><i class="AZ _99"></i><i class="AZ _111"></i><i class="AZ _109"></i><i class="AZ _109"></i><i class="AZ _111"></i><i class="AZ _100"></i><i class="AZ _111"></i><i class="AZ _46"></i></i>
-
-Nulla viverra magna mi, eu laoreet nibh pellentesque scelerisque. Morbi eget orci id dui fringilla laoreet. Nulla cursus, massa vel pulvinar pretium, ex lacus vestibulum lorem, non tincidunt ante metus vitae magna.
-
-
+        <a id="submitbutton" class="runconverter" href="#show-css-font" onClick="runCoder();">See it in HTML/CSS!</a>
     </div>
+    <div id="show-css-font" style="display: none;">
+        <div class="section displayhere example">
 
-</div>
-</div>
-
-
-
-
-        <div id="codehtml" class="code-place section" style="display: none;">
-            <h2>HTML</h2>
-            <p>Place this wherever you want your text to show up:</p>
             <div class="maxwidth">
+                <div id="sample0" class="sample exa"></div>
 
-                <div id="codearea" class="coderesult">
+                <hr>
+
+                <h4>Seamless on any background color</h4>
+
+            <div class="exa example1">
+                <div id="sample1"></div>
+            </div>
 
 
+                <h4>Inherits color property</h4>
+
+            <div class="exa example2">
+                <div id="sample2"></div>
+            </div>
+
+
+
+                <h4>Scales with font-size</h4>
+
+                <div class="exa example3">
+
+                    <div id="sample3"></div>
                 </div>
 
-            <h2>CSS</h2>
-            <p>Add this to your &lt;head&gt;</p>
-
-            <div class="coderesult">
-                &lt;<em class="el">link</em> <em class="cl">rel</em>="<em class="nm">stylesheet</em>" <em class="cl">href</em>="<em class="nm">(path-to)font.css</em>" <em class="cl">type</em>="<em class="nm">text/css</em>"&gt;
             </div>
         </div>
     </div>
+    <div id="codehtml" class="code-place section">
+        <div class="maxwidth">
+
+        <h3>How to Use</h3>
+        <a href="generator/text-to-css.min.js" class="download-link" download="true">Download text-to-css.min.js</a>
+        <p>Call the text converter with your string of text</p>
+
+        <div class="coderesult">
+            var <em class="nm">yourVariable</em> = <em class="el">textToCSSFont</em>(<em class="cl">yourString</em>);
+        </div>
+
+        <p>Optional: add styles.</p>
+
+        <div class="coderesult">
+            var <em class="nm">yourVariable</em> = <em class="el">textToCSSFont</em>(<em class="cl">yourString</em>, {
+            <br/>&nbsp;&nbsp;&nbsp;&nbsp; bold: <em class="bo">true</em>,
+            <br/>&nbsp;&nbsp;&nbsp;&nbsp; italic: <em class="bo">true</em>
+            <br/>&nbsp;&nbsp;&nbsp;&nbsp; underlined: <em class="bo">true</em>
+            <br/>});
+        </div>
+
+        <p>Insert on page wherever you'd like.</p>
+
+        <div class="coderesult">
+            <em class="nm">yourElement</em>.innerHTML = <em class="el">yourVariable</em>;
+        </div>
+
+    </div>
+</div>
+
 
 
 
 </body>
-<script type="text/javascript" src="generator/generator.min.js"></script>
+<script type="text/javascript" src="generator/text-to-css.min.js"></script>
+<script>
+    var styleData = {
+        bold: false,
+        italic: false,
+        underlined: false
+    };
+
+    document.addEventListener('click', function(e) {
+        if (e.target.type === 'checkbox') {
+            var styleType = e.target.getAttribute('data-dat');
+            styleData[styleType] = e.target.checked;
+        }
+    });
+    document.getElementById('submitbutton').onclick = function() {
+        var textArea = document.getElementById('result').value;
+        if (textArea !== '') {
+            document.getElementById('show-css-font').setAttribute('style', '');
+            var displayedFont = textToCSSFont(textArea, styleData);
+            document.getElementById('sample0').innerHTML = displayedFont;
+            document.getElementById('sample1').innerHTML = displayedFont;
+            document.getElementById('sample2').innerHTML = displayedFont;
+            document.getElementById('sample3').innerHTML = displayedFont;
+        } else {
+            alert('Please enter some text to see an example');
+        }
+
+    }
+</script>
 
 </html>
