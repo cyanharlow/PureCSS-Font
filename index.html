@@ -1,25 +1,19 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <title>Pure CSS Font</title>
     <meta name="description" content="Pure CSS Font - Scalable and Styleable - Diana Smith aka cyanHarlow" />
     <meta property="og:description" content="Pure CSS Font - Scalable and Styleable - Diana Smith aka cyanHarlow" />
-
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="keywords" content="cyanharlow, diana, css, art" />
-
     <link href="https://fonts.googleapis.com/css?family=Maven+Pro:400,900" rel="stylesheet">
     <link rel="stylesheet" href="generator/generator.css" type="text/css">
 </head>
-
 <body>
-
     <div class="text-place section">
         <h1>Pure CSS Font</h1>
         <h2>CSS/HTML Generator</h2>
-
         <div class="medwidth">
             <p>
                 For private, SEO-hidden, CAPTCHA-friendly unselectable text.
@@ -28,23 +22,15 @@
         </div>
         <div class="linksection">
             By Diana Smith
-            <span class="separator">|</span>
-
-            <a href="https://github.com/cyanharlow" target="_blank">GitHub.com/cyanHarlow</a>
+            <span class="separator">|</span> <a href="https://github.com/cyanharlow" target="_blank">GitHub.com/cyanHarlow</a>
             <span class="separator">|</span>
             <a href="http://diana-adrianne.com" target="_blank">Website</a>
         </div>
     </div>
-
     <div class="resultpanel section">
         <h3>Try it</h3>
         <p>Enter some text:</p>
-        <div class="maxwidth editorback">
-
-            <textarea id="result" class="white"></textarea>
-
-        </div>
-
+        <div class="maxwidth editorback"> <textarea id="result" class="white"></textarea> </div>
         <ul class="buttonsets">
             <li>
                 <input id="bold" type="checkbox" data-dat="bold"></input>
@@ -58,76 +44,50 @@
                 <input id="unde" type="checkbox" data-dat="underlined"></input>
                 <label for="unde" class="underline">U</label>
             </li>
-        </ul>
-
-        <a id="submitbutton" class="runconverter" href="#show-css-font" onClick="runCoder();">See it in HTML/CSS!</a>
+        </ul> <a id="submitbutton" class="runconverter" href="#show-css-font" onClick="runCoder();">See it in HTML/CSS!</a>
     </div>
     <div id="show-css-font" style="display: none;">
         <div class="section displayhere example">
-
             <div class="maxwidth">
                 <div id="sample0" class="sample exa"></div>
-
                 <hr>
-
                 <h4>Seamless on any background color</h4>
-
-            <div class="exa example1">
-                <div id="sample1"></div>
-            </div>
-
-
+                <div class="exa example1">
+                    <div id="sample1"></div>
+                </div>
                 <h4>Inherits color property</h4>
-
-            <div class="exa example2">
-                <div id="sample2"></div>
-            </div>
-
-
-
+                <div class="exa example2">
+                    <div id="sample2"></div>
+                </div>
                 <h4>Scales with font-size</h4>
-
                 <div class="exa example3">
-
                     <div id="sample3"></div>
                 </div>
-
             </div>
         </div>
     </div>
     <div id="codehtml" class="code-place section">
         <div class="maxwidth">
-
-        <h3>How to Use</h3>
-        <a href="generator/text-to-css.min.js" class="download-link" download="true">Download text-to-css.min.js</a>
-        <p>Call the text converter with your string of text</p>
-
-        <div class="coderesult">
-            var <em class="nm">yourVariable</em> = <em class="el">textToCSSFont</em>(<em class="cl">yourString</em>);
+            <h3>How to Use</h3>
+            <a href="generator/text-to-css.min.js" class="download-link" download="true">Download text-to-css.min.js</a>
+            <p>Call the text converter with your string of text</p>
+            <div class="coderesult">
+                var <em class="nm">yourVariable</em> = <em class="el">textToCSSFont</em>(<em class="cl">yourString</em>);
+            </div>
+            <p>Optional: add styles.</p>
+            <div class="coderesult">
+                var <em class="nm">yourVariable</em> = <em class="el">textToCSSFont</em>(<em class="cl">yourString</em>, {
+                <br/>&nbsp;&nbsp;&nbsp;&nbsp; bold: <em class="bo">true</em>,
+                <br/>&nbsp;&nbsp;&nbsp;&nbsp; italic: <em class="bo">true</em>
+                <br/>&nbsp;&nbsp;&nbsp;&nbsp; underlined: <em class="bo">true</em>
+                <br/>});
+            </div>
+            <p>Insert on page wherever you'd like.</p>
+            <div class="coderesult">
+                <em class="nm">yourElement</em>.innerHTML = <em class="el">yourVariable</em>;
+            </div>
         </div>
-
-        <p>Optional: add styles.</p>
-
-        <div class="coderesult">
-            var <em class="nm">yourVariable</em> = <em class="el">textToCSSFont</em>(<em class="cl">yourString</em>, {
-            <br/>&nbsp;&nbsp;&nbsp;&nbsp; bold: <em class="bo">true</em>,
-            <br/>&nbsp;&nbsp;&nbsp;&nbsp; italic: <em class="bo">true</em>
-            <br/>&nbsp;&nbsp;&nbsp;&nbsp; underlined: <em class="bo">true</em>
-            <br/>});
-        </div>
-
-        <p>Insert on page wherever you'd like.</p>
-
-        <div class="coderesult">
-            <em class="nm">yourElement</em>.innerHTML = <em class="el">yourVariable</em>;
-        </div>
-
     </div>
-</div>
-
-
-
-
 </body>
 <script type="text/javascript" src="generator/text-to-css.min.js"></script>
 <script>
@@ -136,7 +96,6 @@
         italic: false,
         underlined: false
     };
-
     document.addEventListener('click', function(e) {
         if (e.target.type === 'checkbox') {
             var styleType = e.target.getAttribute('data-dat');
@@ -155,8 +114,6 @@
         } else {
             alert('Please enter some text to see an example');
         }
-
     }
 </script>
-
 </html>
